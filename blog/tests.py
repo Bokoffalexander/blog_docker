@@ -10,7 +10,7 @@ class Test(TestCase):
     payload2 = {"title":"Hello mister"}
     json_payload1 = json.dumps(payload1, indent = 4)
     json_payload2 = json.dumps(payload2, indent = 4)
-    headers12 = {"Authorization":"Basic dXNlcjI6T2xvcmRqZXN1cw==", 'Content-Type': 'application/json'}
+    headers12 = {"Authorization":"Basic YWRtaW46YWRtaW4=", 'Content-Type': 'application/json'}
     url2 = "will be in POST-method with special ID"
 
     def setUp(self):
