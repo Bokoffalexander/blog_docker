@@ -56,11 +56,9 @@ localhost:8008/api/v1/schema/redoc/
 
 #### Авторизация Token 
 
-GET localhost:8008/api/v1/listusers/
+localhost:8008/api/v1/listusers/
 
-1) [permissions.IsAdminUser] 
-
-2) [authentication.TokenAuthentication]
+GET [permissions.IsAdminUser] + [authentication.TokenAuthentication]
 
 ## 4. Описание ERRORS - Возвращается json ответ ошибки:
 
