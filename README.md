@@ -4,7 +4,7 @@
 
 1) docker build .
 
-2) docker pull postgresql:12-bullseye
+2) docker pull postgres:12-bullseye
 
 3) docker compose up -d
 
@@ -26,23 +26,23 @@ test (если нужны тесты)
 
 #### Авторизация Basic 
 
-'/api/v1/bloglist/'
+localhost:8008/api/v1/bloglist/
 
 ### (Б) PATCH и DELETE - Owner или Admin
 
 #### Авторизация Basic
 
-'/api/v1/bloglist/<int:pk>/'
+localhost:8008/api/v1/bloglist/<int:pk>/
 
 ### (В) Ручки-OpenAPI
 
-OpenAPI 'api/v1/schema/'
+localhost:8008/api/v1/schema/
 
 #### Чтобы авторизоваться в Swagger, нужно logout из DRF-Browsable-API
 
-OpenAPI 'api/v1/schema/swagger-ui/'
+localhost:8008/api/v1/schema/swagger-ui/
 
-OpenAPI 'api/v1/schema/redoc/'
+localhost:8008/api/v1/schema/redoc/
 
 #### (Г) Необязательная ручка
 
@@ -56,7 +56,7 @@ OpenAPI 'api/v1/schema/redoc/'
 
 2) [authentication.TokenAuthentication]
 
-'api/v1/listusers/'
+localhost:8008/api/v1/listusers/
 
 ## 4. Описание ERRORS - Возвращается json ответ ошибки:
 
