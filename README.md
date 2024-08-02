@@ -1,5 +1,12 @@
 ﻿# drf_blog
 
+Python 3.11.5
+
+Django==5.0.7
+
+djangorestframework==3.15.2
+
+
 # Мой готовый сервер:
 
 Можно перейти и посмотреть
