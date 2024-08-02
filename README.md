@@ -10,6 +10,8 @@ http://109.71.247.68:8008/api/v1/schema/swagger-ui/
 
 # Запуск локально через Docker:
 
+Делал на Ubuntu, поэтому <bold>docker compose</bold> у меня без тире.
+
 1) docker build .
 
 2) docker pull postgres:12-bullseye
