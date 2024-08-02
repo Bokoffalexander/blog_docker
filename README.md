@@ -19,7 +19,7 @@ http://109.71.247.68:8008/api/v1/schema/swagger-ui/
 4) docker exec -it blog_docker-web-1 python3 manage.py
 migrate
 
-5) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (admin : admin)
+5) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (юзер:admin и пароль:admin)
 
 6) docker exec -it blog_docker-web-1 python3 manage.py
 test (если нужны тесты, там запросы от юзера: admin и паролем: admin )
