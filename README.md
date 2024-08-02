@@ -31,7 +31,7 @@ http://109.71.247.68:8008/api/v1/schema/swagger-ui/
 
 6) docker exec -it blog_docker-web-1 python3 manage.py test
 
-(если нужны тесты, там запросы от юзера: admin и паролем: admin )
+(Этой командой тесты запускаются от юзера: admin и паролем: admin )
 
 # Описание:
 
