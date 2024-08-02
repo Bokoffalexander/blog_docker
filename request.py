@@ -20,11 +20,9 @@ json_payload = json.dumps(payload, indent = 4)
 headers12 = {"Authorization":"Basic YWRtaW46YWRtaW4=", 'Content-Type': 'application/json'}
 
 # Авторизация-Token
-#admin 65b6ca5f54722ae63ceef8b8941b0aafd329070b
-#user2 41faaf22cd83f35ad5edce2c08e4a61457e9eff9
-#user3 aacab635ebaa5ae7f703e53c6494f0ae35933ef8
+#admin 86d9dc6568afeecc35403ed54fe59ae4b2faf2db
 # только для url3.
-headers3 = {"Authorization":"Token 65b6ca5f54722ae63ceef8b8941b0aafd329070b"}
+headers3 = {"Authorization":"Token 86d9dc6568afeecc35403ed54fe59ae4b2faf2db"}
 
 response = requests.request("PATCH", url2, headers=headers12, data=json_payload)
 
