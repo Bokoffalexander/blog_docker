@@ -2,25 +2,25 @@
 
 # Описание:
 
-## Блог API: ->JSON и <-JSON
+## 1. Блог API: ->JSON и <-JSON
 
-## Пока на sqlite
+## 2. БД postgresql
 
-## Описание ручек
+## 3. Описание ручек
 
-### GET и POST  - IsAuthenticatedOrReadOnly
+### (А) GET и POST  - IsAuthenticatedOrReadOnly
 
 #### Авторизация Basic 
 
 '/api/v1/bloglist/'
 
-### PATCH и DELETE - Owner или Admin
+### (Б) PATCH и DELETE - Owner или Admin
 
 #### Авторизация Basic
 
 '/api/v1/bloglist/<int:pk>/'
 
-### Ручки-OpenAPI
+### (В) Ручки-OpenAPI
 
 OpenAPI 'api/v1/schema/'
 
@@ -30,7 +30,7 @@ OpenAPI 'api/v1/schema/swagger-ui/'
 
 OpenAPI 'api/v1/schema/redoc/'
 
-#### Необязательная ручка
+#### (Г) Необязательная ручка
 
 #### Получить список юзеров (без сериализации) - ответ JSON
 
@@ -44,7 +44,7 @@ OpenAPI 'api/v1/schema/redoc/'
 
 'api/v1/listusers/'
 
-## Описание ERRORS - Возвращается json ответ ошибки:
+## 4. Описание ERRORS - Возвращается json ответ ошибки:
 
 1) Для данного URL нет такого метода
 
@@ -67,17 +67,17 @@ return Response({"error": "You can't PATCH this obj, isn't yours."})
 return Response({"error": "You can't DElETE this obj, isn't yours."})
 
 
-## Сериализатор
+## 5. Сериализатор
 
 наследует от ModelSerializer
 
-## Представление
+## 6. Представление
 
 наследует от APIView
 
-## Добавил login-Browsable-API (в браузере)
+## 7. Добавил login-Browsable-API (в браузере)
 
-## Тесты:
+## 8. Тесты:
 
 ### запустить после runserver
 
@@ -91,7 +91,7 @@ GET и POST '/api/v1/bloglist/'
 
 PATCH и DELETE '/api/v1/bloglist/<int:pk>/'
 
-#### Для ручной отправки запросов использовал - python, а не Postman
+#### 9. Для ручной отправки запросов использовал - python, а не Postman
 
 #### Файл request.py (request-JSON и response-JSON)
 
@@ -101,13 +101,13 @@ import requests
 import json
 
 #### для GET и POST - IsAuthenticatedOrReadOnly
-url1 = "http://localhost:8000/api/v1/bloglist/"
+url1 = "http://localhost:8008/api/v1/bloglist/"
 
 #### для PATCH и DELETE - Owner или Admin
-url2 = "http://localhost:8000/api/v1/bloglist/120/"
+url2 = "http://localhost:8008/api/v1/bloglist/120/"
 
 #### для GET - IsAdminUser + Token
-url3 = "http://localhost:8000/api/v1/listusers/"
+url3 = "http://localhost:8008/api/v1/listusers/"
 
 payload = {"title":"Hi python",  "content": "any", "is_published": "true"}
 json_payload = json.dumps(payload, indent = 4) 
@@ -120,11 +120,9 @@ json_payload = json.dumps(payload, indent = 4)
 headers12 = {"Authorization":"Basic YWRtaW46YWRtaW4=", 'Content-Type': 'application/json'}
 
 # Авторизация-Token
-#admin 65b6ca5f54722ae63ceef8b8941b0aafd329070b
-#user2 41faaf22cd83f35ad5edce2c08e4a61457e9eff9
-#user3 aacab635ebaa5ae7f703e53c6494f0ae35933ef8
+#admin 86d9dc6568afeecc35403ed54fe59ae4b2faf2db
 # только для url3.
-headers3 = {"Authorization":"Token 65b6ca5f54722ae63ceef8b8941b0aafd329070b"}
+headers3 = {"Authorization":"Token 86d9dc6568afeecc35403ed54fe59ae4b2faf2db"}
 
 response = requests.request("PATCH", url2, headers=headers12, data=json_payload)
 
