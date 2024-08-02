@@ -1,13 +1,13 @@
 import requests
 import json
 #### для GET и POST - IsAuthenticatedOrReadOnly
-url1 = "http://localhost:8000/api/v1/bloglist/"
+url1 = "http://localhost:8008/api/v1/bloglist/"
 
 #### для PATCH и DELETE - Owner или Admin
-url2 = "http://localhost:8000/api/v1/bloglist/120/"
+url2 = "http://localhost:8008/api/v1/bloglist/120/"
 
 #### для GET - IsAdminUser + Token
-url3 = "http://localhost:8000/api/v1/listusers/"
+url3 = "http://localhost:8008/api/v1/listusers/"
 
 payload = {"title":"Hi python",  "content": "any", "is_published": "true"}
 json_payload = json.dumps(payload, indent = 4) 
