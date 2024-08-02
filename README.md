@@ -14,12 +14,12 @@ http://109.71.247.68:8008/api/v1/bloglist/
 
 3) docker compose up -d
 
-4) docker exec -it blog_test_openapi-web-1  python3 manage.py
+4) docker exec -it blog_docker-web-1 python3 manage.py
 migrate
 
-5) docker exec -it blog_test_openapi-web-1  python3 manage.py createsuperuser (admin : admin)
+5) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (admin : admin)
 
-6) docker exec -it blog_test_openapi-web-1  python3 manage.py
+6) docker exec -it blog_docker-web-1 python3 manage.py
 test (если нужны тесты, там запросы от юзера: admin и паролем: admin )
 
 # Описание:
