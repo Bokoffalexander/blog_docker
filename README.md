@@ -6,6 +6,8 @@
 
 http://109.71.247.68:8008/api/v1/bloglist/
 
+http://109.71.247.68:8008/api/v1/schema/swagger-ui/
+
 # Запуск через Docker:
 
 1) docker build .
