@@ -25,13 +25,12 @@ http://109.71.247.68:8008/api/v1/schema/swagger-ui/
 
 3) docker compose up -d
 
-4) docker exec -it blog_docker-web-1 python3 manage.py
-migrate
+4) docker exec -it blog_docker-web-1 python3 manage.py migrate
 
 5) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (юзер: admin и пароль: admin)
 
-6) docker exec -it blog_docker-web-1 python3 manage.py
-test
+6) docker exec -it blog_docker-web-1 python3 manage.py test
+
 (если нужны тесты, там запросы от юзера: admin и паролем: admin )
 
 # Описание:
@@ -109,13 +108,13 @@ return Response({"error": "You can't DElETE this obj, isn't yours."})
 
 ## 8. Тесты:
 
-### запустить после runserver
+### Есть команда через докер (в начале описано)
 
-python manage.py test
-
-Проверка:
+### Запускаются после runserver
 
 Использовал: TestCase и requests
+
+Проверка:
 
 GET и POST '/api/v1/bloglist/'
 
