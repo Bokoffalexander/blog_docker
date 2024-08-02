@@ -4,11 +4,10 @@ INSTALLED_APPS = [
     ...
     'rest_framework.authtoken'
 ]
-Обязательно запустите manage.py migrate 
+# Then: python manage.py migrate 
 
 
-Вам также потребуется создать токены
- для своих пользователей.
+# To create token for first user:
 
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
