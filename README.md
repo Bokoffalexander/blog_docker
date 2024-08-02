@@ -10,7 +10,7 @@ http://109.71.247.68:8008/api/v1/schema/swagger-ui/
 
 # Запуск локально через Docker:
 
-Делал на Ubuntu, поэтому <bold>docker compose</bold> у меня без тире.
+Делал на Ubuntu, поэтому <b>docker compose</b> у меня без тире.
 
 1) docker build .
 
