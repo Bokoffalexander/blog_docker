@@ -1,5 +1,11 @@
 ﻿# drf_blog
 
+# Мой готовый сервер:
+
+Можно перейти и посмотреть
+
+http://109.71.247.68:8008/api/v1/bloglist/
+
 # Запуск через Docker:
 
 1) docker build .
@@ -44,19 +50,17 @@ localhost:8008/api/v1/schema/swagger-ui/
 
 localhost:8008/api/v1/schema/redoc/
 
-#### (Г) Необязательная ручка
+### (Г) Необязательная ручка
 
 #### Получить список юзеров (без сериализации) - ответ JSON
 
-#### GET - Admin+Token
+#### Авторизация Token 
 
-##### Авторизация Token 
+GET localhost:8008/api/v1/listusers/
 
 1) [permissions.IsAdminUser] 
 
 2) [authentication.TokenAuthentication]
-
-localhost:8008/api/v1/listusers/
 
 ## 4. Описание ERRORS - Возвращается json ответ ошибки:
 
