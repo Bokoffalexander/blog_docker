@@ -22,7 +22,8 @@ migrate
 5) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (юзер: admin и пароль: admin)
 
 6) docker exec -it blog_docker-web-1 python3 manage.py
-test (если нужны тесты, там запросы от юзера: admin и паролем: admin )
+test
+(если нужны тесты, там запросы от юзера: admin и паролем: admin )
 
 # Описание:
 
