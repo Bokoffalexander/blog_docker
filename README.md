@@ -1,5 +1,19 @@
 ﻿# drf_blog
 
+# Запуск через Docker:
+
+1) docker build .
+
+2) docker pull postgresql:12-bullseye
+
+3) docker compose up -d
+
+4) docker exec -it blog_test_openapi-web-1  python3 manage.py
+migrate
+
+5) docker exec -it blog_test_openapi-web-1  python3 manage.py
+test (если нужны тесты)
+
 # Описание:
 
 ## 1. Блог API: ->JSON и <-JSON
