@@ -34,23 +34,23 @@ test (если нужны тесты, там запросы от юзера: adm
 
 #### Авторизация Basic 
 
-localhost:8008/api/v1/bloglist/
+http://localhost:8008/api/v1/bloglist/
 
 ### (Б) PATCH и DELETE - Owner или Admin
 
 #### Авторизация Basic
 
-localhost:8008/api/v1/bloglist/<int:pk>/
+http://localhost:8008/api/v1/bloglist/<int:pk>/
 
 ### (В) Ручки-OpenAPI
 
-localhost:8008/api/v1/schema/
+http://localhost:8008/api/v1/schema/
 
 #### Чтобы авторизоваться в Swagger, нужно logout из DRF-Browsable-API
 
-localhost:8008/api/v1/schema/swagger-ui/
+http://localhost:8008/api/v1/schema/swagger-ui/
 
-localhost:8008/api/v1/schema/redoc/
+http://localhost:8008/api/v1/schema/redoc/
 
 ### (Г) Необязательная ручка
 
@@ -58,7 +58,7 @@ localhost:8008/api/v1/schema/redoc/
 
 #### Авторизация Token 
 
-localhost:8008/api/v1/listusers/
+http://localhost:8008/api/v1/listusers/
 
 GET [permissions.IsAdminUser] + [authentication.TokenAuthentication]
 
