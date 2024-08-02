@@ -1,0 +1,5 @@
+Django
+djangorestframework
+requests
+drf-spectacular
+psycopg[binary]==3.1.12

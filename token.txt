@@ -1,0 +1,17 @@
+TokenAuthentication
+
+INSTALLED_APPS = [
+    ...
+    'rest_framework.authtoken'
+]
+Обязательно запустите manage.py migrate 
+
+
+Вам также потребуется создать токены
+ для своих пользователей.
+
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+
+token = Token.objects.create(user=User.objects.all()[0])
+print(token.key)
