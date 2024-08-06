@@ -1,5 +1,8 @@
-Django
-djangorestframework
-requests
-drf-spectacular
+Django==5.0.7
+djangorestframework==3.15.2
+requests==2.32.3
+drf-spectacular==0.27.2
 psycopg[binary]==3.1.12
+
+python-dotenv==1.0.1
+pytest-django==4.8.0
