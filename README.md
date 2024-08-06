@@ -23,13 +23,15 @@ http://109.71.247.68:8008/api/v1/schema/swagger-ui/
 
 2) docker pull postgres:12-bullseye
 
-3) docker compose up -d
+3) cp env.example .env
 
-4) docker exec -it blog_docker-web-1 python3 manage.py migrate
+4) docker compose up -d
 
-5) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (юзер: admin и пароль: admin)
+5) docker exec -it blog_docker-web-1 python3 manage.py migrate
 
-6) docker exec -it blog_docker-web-1 python3 manage.py test
+6) docker exec -it blog_docker-web-1 python3 manage.py createsuperuser (юзер: admin и пароль: admin)
+
+7) docker exec -it blog_docker-web-1 python3 manage.py test
 
 (Этой командой тесты запускаются от юзера: admin и паролем: admin )
 
