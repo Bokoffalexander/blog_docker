@@ -5,68 +5,69 @@ logger = logging.getLogger(__name__)
 
 
 @pytest.mark.django_db
-def test_create_task(api_client) -> None:
+def test_create_blog(api_client) -> None:
     """
-    Test the create task API
+    Test the create a new post API
     :param api_client:
     :return: None
     """
     payload = {
-        "title": "Wash Clothes",
-        "content": "Wash clothes in the washing machine",
+        "title": "My Clothes",
+        "content": "My clothes are in the washing machine",
+        "is_published": "true"
     }
 
-    # Create a task
-    response_create = api_client.post("/api/tasks/", data=payload, format="json")
-    task_id = response_create.data["task"]["id"]
-    logger.info(f"Created task with id: {task_id}")
+    # Create a new post
+    response_create = api_client.post("/api/v1/bloglist/", data=payload, format="json")
+    task_id = response_create.data["post"]["id"]
+    logger.info(f"Created a new post with id: {post_id}")
     logger.info(f"Response: {response_create.data}")
     assert response_create.status_code == 201
-    assert response_create.data["task"]["title"] == payload["title"]
+    assert response_create.data["post"]["title"] == payload["title"]
 
-    # Read the task
-    response_read = api_client.get(f"/api/tasks/{task_id}", format="json")
-    logger.info(f"Read task with id: {task_id}")
+    # Read all posts
+    response_read = api_client.get(f"/api/v1/bloglist/", format="json")
     logger.info(f"Response: {response_read.data}")
     assert response_read.status_code == 200
-    assert response_read.data["task"]["title"] == payload["title"]
+    assert response_read.data["post"]["title"] == payload["title"]
 
 
 @pytest.mark.django_db
-def test_patch_task(api_client) -> None:
+def test_patch_blog(api_client) -> None:
     """
-    Test the update task API
+    Test the update the post API
     :param api_client:
     :return: None
     """
     payload = {
         "title": "Trim the Lawn",
         "content": "Trim the lawn with the lawnmower",
+        "is_published": "true"
     }
 
-    # Create a task
-    response_create = api_client.post("/api/tasks/", data=payload, format="json")
-    task_id = response_create.data["task"]["id"]
-    logger.info(f"Created task with id: {task_id}")
+    # Create a new post
+    response_create = api_client.post("/api/v1/bloglist/", data=payload, format="json")
+    blog_id = response_create.data["post"]["id"]
+    logger.info(f"Created a mew post with id: {blog_id}")
     logger.info(f"Response: {response_create.data}")
     assert response_create.status_code == 201
-    assert response_create.data["task"]["title"] == payload["title"]
+    assert response_create.data["post"]["title"] == payload["title"]
 
-    # Update the task
+    # Update the post
     payload["title"] = "Cut the grass"
     response_update = api_client.patch(
-        f"/api/tasks/{task_id}", data=payload, format="json"
+        f"/api/v1/bloglist/{blog_id}", data=payload, format="json"
     )
-    logger.info(f"Updated task with id: {task_id}")
+    logger.info(f"Updated blog with id: {blog_id}")
     logger.info(f"Response: {response_update.data}")
     assert response_update.status_code == 200
-    assert response_update.data["task"]["title"] == payload["title"]
+    assert response_update.data["post"]["title"] == payload["title"]
 
-    # Task doesn't exist
+    # This blog doesn't exist
     response_update = api_client.patch(
-        f"/api/tasks/{task_id + '1'}", data=payload, format="json"
+        f"/api/v1/bloglist/{task_id + '1'}", data=payload, format="json"
     )
-    logger.info(f"Updated task with id: {task_id + '1'}")
+    logger.info(f"Updated blog with id: {blog_id + '1'}")
     logger.info(f"Response: {response_update.data}")
     assert response_update.status_code == 404
 
