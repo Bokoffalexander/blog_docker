@@ -1,4 +1,4 @@
-﻿# drf_blog
+﻿# drf_blog 
 
 Python 3.11.5
 
